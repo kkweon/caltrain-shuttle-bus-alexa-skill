@@ -1,0 +1,15 @@
+{
+    "name": "CalTrainShuttleBusAlexaSkill",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rm -f upload.zip && zip -r upload.zip node_modules/ index.js shuttle-bus.js"
+    },
+    "keywords": [],
+    "author": "Mo Kweon",
+    "license": "MIT",
+    "dependencies": {
+        "alexa-sdk": "^1.0.15"
+    }
+}

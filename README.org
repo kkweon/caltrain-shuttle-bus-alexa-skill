@@ -1,0 +1,15 @@
+* CalTrain Shuttle Bus Schedule Alexa Skill
+
+Broadway -> Millbrae CalTrain Shuttle Bus Schedule Alexa skill
+
+Simply ask
+
+#+BEGIN_SRC text
+Alexa ask shuttle bus
+#+END_SRC
+
+
+The Alexa will respond
+#+BEGIN_SRC text
+Your next shuttle bus arrives in 8 hour 47 minutes at 6:10 AM
+#+END_SRC
