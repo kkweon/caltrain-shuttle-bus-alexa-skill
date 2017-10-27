@@ -8,7 +8,7 @@
 "use strict";
 
 const Alexa = require('alexa-sdk');
-const get_next_shuttlebus = require("./shuttle-bus");
+const shuttlebus = require("./shuttlebus");
 
 const APP_ID = "amzn1.ask.skill.22c8922c-21d3-4a41-891f-bddf14e34e89";
 
@@ -26,7 +26,9 @@ const handlers = {
     },
 
     'GetShuttleBusSchedule': function() {
-        const response = get_next_shuttlebus();
+        const date = shuttlebus.getPacificTime(new Date());
+        const schedule = shuttlebus.schedule;
+        const response = shuttlebus.getNextSchedule(date, schedule);
         if (response.shuttle_bus) {
             const message = messageBuilder(response.message, response.shuttle_bus[0]);
             this.emit(":tell", message);
