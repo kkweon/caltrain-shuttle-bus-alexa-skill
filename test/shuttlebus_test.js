@@ -4,7 +4,7 @@ const shuttlebus = require("../shuttlebus");
 describe("Time Conversion", function() {
   it("6 am should return [6, 0]", function() {
     let time_6 = new Date();
-    time_6.setHours(6);
+    time_6.setUTCHours(6 + 8);
     time_6.setMinutes(0);
 
     let pacific_time = shuttlebus.getPacificTime(time_6);
