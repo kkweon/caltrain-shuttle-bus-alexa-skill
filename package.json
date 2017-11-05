@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "rm -f upload.zip && zip -r upload.zip node_modules/ index.js shuttlebus.js",
-        "test": "mocha"
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
     },
     "keywords": [],
     "author": "Mo Kweon",
@@ -14,6 +15,9 @@
         "alexa-sdk": "^1.0.15"
     },
     "devDependencies": {
-        "mocha": "^4.0.1"
+        "coveralls": "^3.0.0",
+        "mocha": "^4.0.1",
+        "mocha-lcov-reporter": "^1.3.0",
+        "nyc": "^11.3.0"
     }
 }

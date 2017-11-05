@@ -3,3 +3,4 @@ node_modules/
 /upload.zip
 /.projectile
 /.tern-project
+.nyc_output
