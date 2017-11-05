@@ -1,5 +1,5 @@
 * CalTrain Shuttle Bus Schedule Alexa Skill
-[[https://travis-ci.org/kkweon/caltrain-shuttle-bus-alexa-skill.svg?branch=master]]
+#+HTML: <img src="https://travis-ci.org/kkweon/caltrain-shuttle-bus-alexa-skill.svg?branch=master" alt="Build Status" /><a href='https://coveralls.io/github/kkweon/caltrain-shuttle-bus-alexa-skill?branch=master'><img src='https://coveralls.io/repos/github/kkweon/caltrain-shuttle-bus-alexa-skill/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 Broadway -> Millbrae CalTrain Shuttle Bus Schedule Alexa skill
 
