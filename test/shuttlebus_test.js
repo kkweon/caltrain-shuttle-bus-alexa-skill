@@ -8,7 +8,7 @@ describe("Time Conversion", function() {
     time_6.setMinutes(0);
 
     let pacific_time = shuttlebus.getPacificTime(time_6);
-    assert.deepEqual(pacific_tiem, [6, 0]);
+    assert.deepEqual(pacific_time, [6, 0]);
   });
 });
 
