@@ -7,17 +7,18 @@
 
 "use strict";
 
+const moment = require("moment-timezone");
+
 /**
  * Get a Pacific Time regardless of the server location.
- * @param {Date} date - Date object
  * @returns {number[]} Returns [Hour, Minute]
  */
-function getPacificTime(date) {
-  // PDT + 7 = UTC => PDT = UTC - 7;
-  // PST + 8 = UTF => PDT = UTC - 8;
-  date.setTime(date.getTime() - 8 * 60 * 60 * 1000);
+function getPacificTime() {
+  let now = moment().tz("America/Los_Angeles");
+  let hours = now.hours();
+  let minutes = now.minutes();
 
-  return [date.getUTCHours(), date.getUTCMinutes()];
+  return [hours, minutes];
 }
 
 // Morning Shuttle Bus Schedule

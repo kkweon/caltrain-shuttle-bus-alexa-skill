@@ -1,17 +1,6 @@
 const assert = require("assert");
 const shuttlebus = require("../shuttlebus");
 
-describe("Time Conversion", function() {
-  it("6 am should return [6, 0]", function() {
-    let time_6 = new Date();
-    time_6.setUTCHours(6 + 8);
-    time_6.setMinutes(0);
-
-    let pacific_time = shuttlebus.getPacificTime(time_6);
-    assert.deepEqual(pacific_time, [6, 0]);
-  });
-});
-
 describe("Time Schedule", function() {
   it("should 21 schedules every day", function() {
     assert.equal(shuttlebus.schedule.length, 21);
@@ -29,10 +18,7 @@ describe("Time Schedule", function() {
   });
 
   it("Before 6am, possible schedule should return 21 schedules", function() {
-    let before_6am = new Date();
-    before_6am.setUTCHours(6 + 8);
-    before_6am.setUTCMinutes(0);
-    let pacific_time = shuttlebus.getPacificTime(before_6am);
+    let pacific_time = [6, 0];
 
     let schedules = shuttlebus.getAvailableList(
       shuttlebus.schedule,
@@ -42,11 +28,7 @@ describe("Time Schedule", function() {
   });
 
   it("After 10 AM, there are only 10 schedules in the afternoon", function() {
-    let after_10am = new Date();
-    // PDT + 7 = UTC
-    after_10am.setUTCHours(10 + 8);
-    after_10am.setUTCMinutes(0);
-    let pacific_time = shuttlebus.getPacificTime(after_10am);
+    let pacific_time = [10, 0];
     let schedules = shuttlebus.getAvailableList(
       shuttlebus.schedule,
       pacific_time
@@ -94,12 +76,9 @@ describe("getTimeDiff", function() {
 });
 
 describe("getNextSchedule/2", function() {
-  describe("after 7:05pm there is no shuttle bus", function() {
+  describe("at 8:00pm there is no shuttle bus", function() {
     it("should return the No shuttle bus message", function() {
-      let date = new Date();
-      date.setUTCHours(20 + 8);
-      date.setUTCMinutes(0);
-      date = shuttlebus.getPacificTime(date);
+      let date = [20, 00];
       let message = shuttlebus.getNextSchedule(date, shuttlebus.schedule);
       assert.equal(
         message.message,
@@ -108,12 +87,9 @@ describe("getNextSchedule/2", function() {
       assert.equal(message.shuttle_bus, null);
     });
   });
-  describe("before 6:05am the first bus is at 6:10am", function() {
+  describe("at 6:05am the first bus is at 6:10am", function() {
     it("should return the correct shuttle bus message", function() {
-      let date = new Date();
-      date.setUTCHours(6 + 8);
-      date.setUTCMinutes(5);
-      date = shuttlebus.getPacificTime(date);
+      let date = [6, 5];
       let message = shuttlebus.getNextSchedule(date, shuttlebus.schedule);
       assert.equal(
         message.message,
