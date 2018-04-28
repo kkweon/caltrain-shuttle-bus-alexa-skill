@@ -1,4 +1,7 @@
 * CalTrain Shuttle Bus Schedule Alexa Skill
+
+  #+ATTR_HTML: title="Greenkeeper badge"
+  [[https://greenkeeper.io/][file:https://badges.greenkeeper.io/kkweon/caltrain-shuttle-bus-alexa-skill.svg]]
 #+HTML: <img src="https://travis-ci.org/kkweon/caltrain-shuttle-bus-alexa-skill.svg?branch=master" alt="Build Status" /><a href='https://coveralls.io/github/kkweon/caltrain-shuttle-bus-alexa-skill?branch=master'><img src='https://coveralls.io/repos/github/kkweon/caltrain-shuttle-bus-alexa-skill/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 Broadway -> Millbrae CalTrain Shuttle Bus Schedule Alexa skill
